@@ -1,5 +1,6 @@
 import React from "react";
 
+// eslint-disable-next-line react/prop-types
 const SearchBar = ({ term, handleChange, handleSubmit }) => {
     return (
         <form>

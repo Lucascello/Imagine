@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import ArtList from "./ArtList";
+import { search } from "./Api";
 
 const App = () => {
     const [term, setTerm] = useState("");
@@ -12,8 +13,18 @@ const App = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("you have searched for - " + term);
-        // or you can send to backend
+
+        if (!term || !term.length) {
+            setArtPieces(null);
+        }
+
+        search(term)
+            .then((results) => {
+                if (results && results.data) {
+                    setArtPieces(results.data);
+                }
+            })
+            .catch((err) => console.log(err));
     };
 
     return (
