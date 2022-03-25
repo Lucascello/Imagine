@@ -5,7 +5,7 @@ import { search } from "./Api";
 
 const App = () => {
     const [term, setTerm] = useState("");
-    const [artPieces, setArtPieces] = useState(null);
+    const [artPieces, setArtPieces] = useState([]);
 
     const handleChange = (e) => {
         setTerm(e.target.value);

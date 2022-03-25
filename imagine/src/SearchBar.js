@@ -5,7 +5,7 @@ const SearchBar = ({ term, handleChange, handleSubmit }) => {
     return (
         <form>
             <div className="search">
-                <label>Find an Artwork</label>
+                <label>Find A Piece Of Artwork</label>
                 <input
                     value={term}
                     onChange={handleChange}
