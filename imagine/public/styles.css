@@ -48,7 +48,7 @@ button {
 
 .artWorks {
     margin-top: 20px;
-    background-color: #ffffff;
+    background-color: #e7e1e1;
     margin-bottom: 16px;
     margin-right: 16px;
     border-radius: 8px;
@@ -69,4 +69,9 @@ img {
     width: 70%;
     object-fit: contain;
     margin-bottom: 10px;
+}
+
+li:hover {
+    transform: scale(1.5);
+    border-color: rgb(49, 50, 50);
 }

@@ -8,7 +8,7 @@ const ArtList = ({ artPieces }) => {
     console.log("MY ART:", artPieces);
 
     const artWork = artPieces.map((art) => {
-        let image = `https://www.artic.edu/iiif/2/${art.image_id}/full/200,/0/default.jpg`;
+        let image = `https://www.artic.edu/iiif/2/${art.image_id}/full/300,/0/default.jpg`;
         return (
             <li key={art.id} className="artWorks">
                 <h6>{art.title}</h6>
