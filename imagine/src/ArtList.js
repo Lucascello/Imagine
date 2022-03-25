@@ -8,9 +8,11 @@ const ArtList = ({ artPieces }) => {
     console.log("MY ART:", artPieces);
 
     const artWork = artPieces.map((art) => {
+        let image = `https://www.artic.edu/iiif/2/${art.image_id}/full/200,/0/default.jpg`;
         return (
             <li key={art.id} className="artWorks">
-                {art.thumbnail?.alt_text}
+                <h6>{art.title}</h6>
+                <img key={art.id} src={image} alt={art.thumbnail?.alt_text} />
             </li>
         );
     });
