@@ -9,7 +9,7 @@ const SearchBar = ({ term, handleChange, handleSubmit }) => {
                     value={term}
                     onChange={handleChange}
                     type="text"
-                    placeholder="Enter Search Term"
+                    placeholder={!term ? "Enter Search Term" : term}
                 />
                 <button onClick={handleSubmit} type="submit">
                     Submit
