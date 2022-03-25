@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(220, 213, 213);
+}
+
+.container {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(robert-keane-rlbG0p_nQOU-unsplash.jpg);
+    background-size: cover;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: larger;
+}
+
+input {
+    width: 200%;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 4px;
+    align-items: center;
+    border-radius: 8px;
+    display: block;
+}
+
+.search {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
