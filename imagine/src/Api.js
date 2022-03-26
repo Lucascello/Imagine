@@ -1,5 +1,5 @@
 export const search = async (term) => {
-    const URL = `https://api.artic.edu/api/v1/artworks/search?q=${term}&query[term][is_public_domain]=true&limit=20&fields=id,thumbnail,image_id,title`;
+    const URL = `https://api.artic.edu/api/v1/artworks/search?q=${term}&query[term][is_public_domain]=true&page=1&limit=12&fields=id,thumbnail,image_id,title`;
 
     const response = await fetch(URL);
     if (!response.ok) {
