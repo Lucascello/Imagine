@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import ArtList from "./ArtList";
 import { search } from "./Api";
-import Pagination from "./Pagination";
 
 const App = () => {
     const [term, setTerm] = useState("");
@@ -42,9 +41,6 @@ const App = () => {
             <main>
                 <ArtList artPieces={artPieces} />
             </main>
-            <div>
-                <Pagination term={term} artPieces={artPieces} />
-            </div>
         </>
     );
 };

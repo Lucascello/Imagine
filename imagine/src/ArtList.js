@@ -5,10 +5,8 @@ const ArtList = ({ artPieces }) => {
         return <div>No Artwork</div>;
     }
 
-    console.log("MY ART:", artPieces);
-
     const artWork = artPieces.map((art) => {
-        let image = `https://www.artic.edu/iiif/2/${art.image_id}/full/600,/0/default.jpg`;
+        let image = `https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg`;
 
         if (art.title.length > 100) {
             return (

@@ -71,7 +71,7 @@ img {
     margin-bottom: 10px;
 }
 
-/* li:hover {
+li:hover {
     transform: scale(1.5);
     border-color: rgb(49, 50, 50);
-} */
+}
