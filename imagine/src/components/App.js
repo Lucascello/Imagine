@@ -7,7 +7,7 @@ import { search } from "./Api";
 const App = () => {
     const [term, setTerm] = useState("");
     const [artPieces, setArtPieces] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(null);
 
     const handleChange = (e) => {
         setTerm(e.target.value);
@@ -35,7 +35,6 @@ const App = () => {
     };
 
     useEffect(() => {
-        console.log("CURR:", currentPage);
         request();
     }, [currentPage]);
 
