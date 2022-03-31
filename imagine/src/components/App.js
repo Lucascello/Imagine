@@ -56,7 +56,7 @@ const App = () => {
         setCurrentPage(currentPage + 1);
     };
 
-    return !term ? (
+    return (
         <>
             <header>
                 <div className="container">
@@ -70,27 +70,16 @@ const App = () => {
             <main>
                 <ArtList artPieces={artPieces} />
             </main>
-        </>
-    ) : (
-        <>
-            <header>
-                <div className="container">
-                    <SearchBar
-                        term={term}
-                        handleChange={handleChange}
-                        handleSubmit={handleSubmit}
+            <div>
+                {term && (
+                    <Pagination
+                        handlePagination={handlePagination}
+                        moveForward={moveForward}
+                        moveBackwards={moveBackwards}
+                        currentPage={currentPage}
                     />
-                </div>
-            </header>
-            <main>
-                <ArtList artPieces={artPieces} />
-            </main>
-            <Pagination
-                handlePagination={handlePagination}
-                moveForward={moveForward}
-                moveBackwards={moveBackwards}
-                currentPage={currentPage}
-            />
+                )}
+            </div>
         </>
     );
 };
