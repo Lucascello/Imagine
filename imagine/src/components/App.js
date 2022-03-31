@@ -16,6 +16,7 @@ const App = () => {
     const request = () => {
         return search(currentPage, term)
             .then((results) => {
+                console.log("my results", results.pagination.total_pages);
                 if (results && results.data) {
                     setArtPieces(results.data);
                 }
