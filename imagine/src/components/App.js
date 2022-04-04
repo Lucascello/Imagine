@@ -8,6 +8,7 @@ const App = () => {
     const [term, setTerm] = useState("");
     const [artPieces, setArtPieces] = useState([]);
     const [currentPage, setCurrentPage] = useState(null);
+    const [totalPages, setTotalPages] = useState(0);
 
     const handleChange = (e) => {
         setTerm(e.target.value);
@@ -16,9 +17,10 @@ const App = () => {
     const request = () => {
         return search(currentPage, term)
             .then((results) => {
-                console.log("my results", results.pagination.total_pages);
                 if (results && results.data) {
                     setArtPieces(results.data);
+                    setTotalPages(results.pagination.total);
+                    setTotalPages(Math.ceil(results.pagination.total / 12));
                 }
             })
             .catch((err) => console.log(err));
@@ -35,27 +37,13 @@ const App = () => {
         request();
     };
 
+    const handlePagination = (data) => {
+        setCurrentPage(data.selected + 1);
+    };
+
     useEffect(() => {
         request();
     }, [currentPage]);
-
-    const moveBackwards = () => {
-        if (currentPage < 1) {
-            return;
-        }
-        setCurrentPage(currentPage - 1);
-    };
-
-    const handlePagination = (e) => {
-        setCurrentPage(e.target.id);
-    };
-
-    const moveForward = () => {
-        if (currentPage > 20) {
-            return;
-        }
-        setCurrentPage(currentPage + 1);
-    };
 
     return (
         <>
@@ -75,9 +63,8 @@ const App = () => {
                 {term && (
                     <Pagination
                         handlePagination={handlePagination}
-                        moveForward={moveForward}
-                        moveBackwards={moveBackwards}
                         currentPage={currentPage}
+                        totalPages={totalPages}
                     />
                 )}
             </div>
