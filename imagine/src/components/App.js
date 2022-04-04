@@ -21,7 +21,6 @@ const App = () => {
                     setArtPieces(results.data);
                     setTotalPages(results.pagination.total);
                     setTotalPages(Math.ceil(results.pagination.total / 12));
-                    console.log(totalPages);
                 }
             })
             .catch((err) => console.log(err));
